@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package api;
+option go_package = "github.com/proto-http/api";
+
+// User represents a user in the system
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+// UserRequest represents a request to get user details
+message UserRequest {
+  string id = 1;
+}
+
+// UserResponse represents the response with user details
+message UserResponse {
+  User user = 1;
+} 

@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "Proto-HTTP API",
+    "description": "Collection for Proto-HTTP user service API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get User",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/x-protobuf",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/user?id=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user"],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "Get a user by ID"
+      }
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/x-protobuf",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"2\",\n    \"name\": \"Jane Smith\",\n    \"email\": \"jane@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/user",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user"]
+        },
+        "description": "Create a new user"
+      }
+    }
+  ]
+}
